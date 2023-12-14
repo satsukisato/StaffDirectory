@@ -1,0 +1,23 @@
+package com.example.demo.EmployeesAPI.data;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import lombok.Data;
+
+@Data
+public class Employees {
+	
+	@JsonProperty("id")
+	private int id;
+	
+	@JsonProperty("name")
+	private String name;
+	
+	@JsonProperty("hometown")
+	private String hometown;
+	
+	@JsonProperty("joining_month")
+	private String joiningMonth;
+}
+
+
