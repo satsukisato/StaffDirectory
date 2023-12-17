@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8" />
+	<title>社員データ</title>
+	<link rel="stylesheet" th:href="@{/css/employees.css}" href="../static/css/employees.css">
+</head>
+
+<body>
+	<div class="main">
+		<div class="main__titleBox">
+			<h1 class="main__title">社員データ</h1>
+		</div>
+		<form th:action="@{/statusButton}" method="post" th:each="employee : ${employeeInfo}" class="main__inputBox">
+				<h2 th:text="${employee.name}"></h2>
+				<input type="hidden" name="employeeId" th:value="${employee.id}">
+				<button type="submit" class="main__statusButton" name="statusButton" value="clockIn">出勤</button>
+				<button type="submit" class="main__statusButton" name="statusButton" value="breakStart">休憩開始</button>
+				<button type="submit" class="main__statusButton" name="statusButton" value="breakEnd">休憩終了</button>
+				<button type="submit" class="main__statusButton" name="statusButton" value="clockOut">退勤</button>
+		</form>
+
+		<table class="main__attendanceTable">
+			<tr class="main__employeesListBox">
+				<th>出勤日時</th>
+				<th>休憩開始</th>
+				<th>休憩終了</th>
+				<th>退勤日時</th>
+			</tr>
+			<tr th:each="employee : ${employeeAttendance}" class="main__employeesInfoBox">
+				<td th:text="${employee.clockIn}"></td>
+				<td th:text="${employee.breakStart}"></td>
+				<td th:text="${employee.breakEnd}"></td>
+				<td th:text="${employee.clockOut}"></td>
+			</tr>
+		</table>
+		<form th:action="@{employeesList}" method="get" class="main__homeButton">
+			<button type="submit" class="main__homeReturn">社員一覧へ</button>
+		</form>
+	</div>
+</body>
+
+</html>

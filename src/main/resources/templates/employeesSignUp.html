@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset=" utf-8" />
+	<title>社員新規登録</title>
+	<link rel="stylesheet" th:href="@{/css/employees.css}" href="../static/css/employees.css">
+</head>
+
+<body>
+	<div class="main">
+		<div class="main__titleBox">
+			<h1 class="main__title">社員新規登録</hh1>
+		</div>
+		<form th:action="@{/employeesList}" method="post" class="main__signUpInputBox">
+			<label for="main__signUpName">氏名
+				<input type="text" name="name" placeholder="山田太郎" id="main__signUpName">
+			</label>
+			<label for="main__signUpHometown">出身地
+				<input type="text" name="hometown" placeholder="出身地を入力" id="main__signUpHometown">
+			</label>
+			<label for="main__signUpJoining">入社月
+				<input type="month" name="joiningMonth" id="main__signUpJoining">
+			</label>
+			<div class="main__registerBox">
+				<button type="submit" class="main__registerButton">登録</button>
+			</div>
+		</form>
+		<form th:action="@{employeesList}" method="get" class="main__homeButton">
+			<button class="main__homeReturn">社員一覧へ</button>
+		</form>
+	</div>
+
+</body>
+
+</html>

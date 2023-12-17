@@ -4,31 +4,44 @@
 <head>
 	<meta charset=" utf-8" />
 	<title>社員一覧</title>
+	<link rel="stylesheet" th:href="@{/css/employees.css}" href="../static/css/employees.css">
 </head>
 
 <body>
-	<h1>社員一覧</h1>
+	<div class="main">
+		<div class="main__titleBox">
+			<h1 class="main__title">社員一覧表</hh1>
+		</div>
+		<form action="employeesSignUp" method="get" class="main__signUpBox">
+			<button type="submit" class="main__signUpButton">新規登録</button>
+		</form>
+		<table class="main__employeesTable">
+			<thead>
+				<tr class="main__employeesListBox">
+					<th>No</th>
+					<th>氏名</th>
+					<th>出身地</th>
+					<th>入社月</th>
+					<th>詳細</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="employee : ${employees}" class="main__employeesInfoBox">
+					<td th:text="${employee.id}"></td>
+					<td th:text="${employee.name}"></td>
+					<td th:text="${employee.hometown}"></td>
+					<td th:text="${#strings.replace(#strings.substring(employee.joiningMonth,0,7),'-','/')}"></td>
+					<td>
+						<form th:action="@{employeesDetail}" method="get">
+							<input type="hidden" name="employeeSelect" th:value="${employee.id}">
+							<button type="submit" class="main__employeesInfoSubmit">確認</button>
+						</form>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
 
-	<table border="1">
-		<thead>
-			<tr>
-				<th>No</th>
-				<th>氏名</th>
-				<th>出身地</th>
-				<th>入社月</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr th:each="employee : ${employees}">
-				<td th:text="${employee.id}"></td>
-				<td th:text="${employee.name}"></td>
-				<td th:text="${employee.hometown}"></td>
-				<td th:text="${employee.joiningMonth}"></td>
-				<td><button type="submit">詳細</button></td>
-			</tr>
-
-		</tbody>
-	</table>
 </body>
 
 </html>

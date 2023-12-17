@@ -1,0 +1,135 @@
+.main__titleBox {
+	margin: 30px auto;
+	text-align: center;
+	width: 70%;
+
+}
+
+.main__title {
+	letter-spacing: 5px;
+	font-weight: normal;
+}
+
+.main__employeesTable,
+.main__attendanceTable,
+.main__inputBox,
+.main__signUpInputBox {
+	margin-left: auto;
+	margin-right: auto;
+	width: 70%;
+
+}
+
+.main__employeesListBox {
+	background-color: #eb6101;
+	height: 40px;
+	color: white;
+}
+
+.main__employeesInfoBox {
+	background-color: #eedcb3;
+	text-align: center;
+	height: 35px;
+}
+
+.main__employeesInfoSubmit {
+	cursor: pointer;
+	background-color: #ffff;
+	border-color: #ffff;
+	border-radius: 5px;
+}
+
+.main__signUpBox {
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.main__signUpButton,
+.main__statusButton {
+	cursor: pointer;
+	color: #eb6101;
+	background-color: #ffff;
+	border: solid 2px #eb6101;
+	font-size: 20px;
+	padding: 6px;
+	border-radius: 10px;
+}
+
+.main__signUpButton:hover,
+.main__statusButton:hover {
+	color: #ffff;
+	background-color: #eb6101;
+	border: solid 2px #eb6101;
+}
+
+.main__homeReturn {
+	cursor: pointer;
+	border: none;
+	background: none;
+}
+
+.main__inputBox {
+	margin: 20px auto;
+	text-align: center;
+
+}
+
+.main__homeReturn:hover {
+	color: #0080ff;
+	font-weight: bold;
+	font-size: 15px;
+}
+
+.main__homeButton {
+	margin-left: auto;
+	margin-right: auto;
+	width: 70%;
+	text-align: right;
+	margin-top: 20px;
+}
+
+.main__signUpInputBox label {
+	display: flex;
+	gap: 50px;
+	margin-left: 40px;
+	margin-bottom: 20px;
+}
+
+.main__signUpInputBox :first-child {
+	gap: 66px;
+}
+
+#main__signUpName,
+#main__signUpHometown {
+	width: 300px;
+}
+
+.main__signUpInputBox {
+	background-color: #eedcb3;
+	padding: 50px 0;
+}
+
+.main__registerBox {
+	text-align: center;
+}
+
+.main__registerButton {
+	cursor: pointer;
+	color: #eb6101;
+	background-color: #ffff;
+	border: solid 1px #eb6101;
+	font-size: 17px;
+	border-radius: 3px;
+}
+.main__registerButton:hover{
+	color: #ffff;
+	background-color: #eb6101;
+	border: solid 1px #eb6101;
+}
+
+
+
+
+
+
+
